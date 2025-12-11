@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=65"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "distributed-rate-limiter"
+version = "0.1.0"
+description = "Cluster-wide token bucket rate limiter with gRPC and Redis"
+requires-python = ">=3.11"
+dependencies = [
+  "grpcio>=1.66.0",
+  "redis>=5.0.0",
+  "prometheus-client>=0.20.0",
+]
+
+[project.optional-dependencies]
+dev = ["grpcio-tools>=1.66.0", "fakeredis>=2.23.0", "pytest>=8.2.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

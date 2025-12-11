@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package ratelimiter;
+
+// Request to consume tokens for a given identity/key.
+message AcquireRequest {
+  string key = 1;
+  // Number of tokens to consume (defaults to 1 on the server when omitted/zero).
+  double tokens = 2;
+}
+
+message RateLimitResponse {
+  bool allowed = 1;
+  double remaining_tokens = 2;
+  int64 window_count = 3;
+  int64 window_ms = 4;
+}
+
+// Request current usage metrics without consuming tokens.
+message UsageRequest {
+  string key = 1;
+}
+
+message UsageResponse {
+  int64 window_count = 1;
+  int64 window_ms = 2;
+}
+
+service RateLimiter {
+  // Atomically consume tokens; returns whether the request is allowed.
+  rpc Acquire(AcquireRequest) returns (RateLimitResponse);
+  // Return sliding-window analytics without mutating buckets.
+  rpc GetUsage(UsageRequest) returns (UsageResponse);
+}
+

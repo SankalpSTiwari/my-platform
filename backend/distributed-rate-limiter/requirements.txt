@@ -1,0 +1,7 @@
+grpcio>=1.66.0
+grpcio-tools>=1.66.0
+redis>=5.0.0
+prometheus-client>=0.20.0
+fakeredis>=2.23.0
+pytest>=8.2.0
+
