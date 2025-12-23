@@ -137,7 +137,7 @@ class InvertedIndex:
 
             # Exact match
             if term_lower in self.index:
-                self._score_documents(term_lower, doc_scores, exact=True)
+                self._score_documents(term_lower, doc_scores, similarity=1.0)
             else:
                 # Fuzzy match
                 best_matches = self._fuzzy_match_term(term_lower, fuzzy_threshold)
