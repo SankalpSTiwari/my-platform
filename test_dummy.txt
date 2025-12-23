@@ -1,3 +1,0 @@
-This is a dummy file to test git email configuration.
-Created to verify contributions are tracked correctly.
-
