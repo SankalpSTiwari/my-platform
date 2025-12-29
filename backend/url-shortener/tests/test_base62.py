@@ -54,3 +54,5 @@ def test_obfuscate_changes_output():
     obfuscated = obfuscate(code)
     assert obfuscated != code, "Obfuscation should change the code"
 
+
+

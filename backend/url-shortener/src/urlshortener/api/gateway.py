@@ -127,3 +127,5 @@ if __name__ == "__main__":
     init_app()
     app.run(host=config.service_host, port=config.service_port, debug=False)
 
+
+

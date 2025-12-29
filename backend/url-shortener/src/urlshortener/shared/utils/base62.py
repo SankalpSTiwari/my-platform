@@ -81,3 +81,5 @@ def deobfuscate(obfuscated: str) -> str:
         original.append(BASE62_ALPHABET[new_idx])
     return ''.join(original)
 
+
+

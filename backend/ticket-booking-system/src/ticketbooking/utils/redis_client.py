@@ -36,3 +36,6 @@ def create_redis_client(config: Config) -> Optional["redis.Redis"]:
         logger.warning(f"Failed to connect to Redis: {e}. Distributed locking disabled.")
         return None
 
+
+
+
